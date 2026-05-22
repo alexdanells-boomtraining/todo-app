@@ -16,9 +16,29 @@ body {
   margin: 0 auto;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
 h1 {
   font-size: 1.75rem;
-  margin-bottom: 1.5rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+#theme-toggle:hover {
+  border-color: #888;
 }
 
 .add-habit {
@@ -34,6 +54,8 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
+  background: #fff;
+  color: inherit;
 }
 
 #habit-input:focus {
@@ -101,4 +123,50 @@ h1 {
 
 .remove-btn:hover {
   color: #e53e3e;
+}
+
+/* Dark mode */
+
+body.dark {
+  background: #121212;
+  color: #e8e8e8;
+}
+
+body.dark #theme-toggle {
+  border-color: #444;
+}
+
+body.dark #theme-toggle:hover {
+  border-color: #888;
+}
+
+body.dark #habit-input {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark #habit-input:focus {
+  border-color: #888;
+}
+
+body.dark #add-btn {
+  background: #e8e8e8;
+  color: #121212;
+}
+
+body.dark #add-btn:hover {
+  background: #cfcfcf;
+}
+
+body.dark .habit-item {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .habit-item.done .habit-name {
+  color: #555;
+}
+
+body.dark .remove-btn {
+  color: #555;
 }
