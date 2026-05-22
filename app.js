@@ -1,4 +1,21 @@
 const STORAGE_KEY = 'habitTracker_habits';
+const THEME_KEY = 'habitTracker_theme';
+
+function applyTheme(dark) {
+  document.body.classList.toggle('dark', dark);
+  document.getElementById('theme-toggle').textContent = dark ? 'Light mode' : 'Dark mode';
+}
+
+function initTheme() {
+  const dark = localStorage.getItem(THEME_KEY) === 'dark';
+  applyTheme(dark);
+}
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const dark = !document.body.classList.contains('dark');
+  localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+  applyTheme(dark);
+});
 
 function loadHabits() {
   try {
@@ -74,4 +91,5 @@ document.getElementById('habit-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') addHabit();
 });
 
+initTheme();
 renderHabits(loadHabits());
