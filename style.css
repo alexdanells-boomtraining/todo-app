@@ -125,6 +125,27 @@ h1 {
   color: #e53e3e;
 }
 
+#clear-bar {
+  display: none;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+#clear-completed-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #888;
+}
+
+#clear-completed-btn:hover {
+  border-color: #e53e3e;
+  color: #e53e3e;
+}
+
 /* Dark mode */
 
 body.dark {
@@ -169,4 +190,14 @@ body.dark .habit-item.done .habit-name {
 
 body.dark .remove-btn {
   color: #555;
+}
+
+body.dark #clear-completed-btn {
+  border-color: #444;
+  color: #666;
+}
+
+body.dark #clear-completed-btn:hover {
+  border-color: #e53e3e;
+  color: #e53e3e;
 }

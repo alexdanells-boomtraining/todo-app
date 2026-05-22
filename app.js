@@ -33,6 +33,9 @@ function renderHabits(habits) {
   const list = document.getElementById('habit-list');
   list.innerHTML = '';
 
+  document.getElementById('clear-bar').style.display =
+    habits.some(h => h.done) ? 'flex' : 'none';
+
   habits.forEach((habit) => {
     const li = document.createElement('li');
     li.className = 'habit-item' + (habit.done ? ' done' : '');
@@ -85,7 +88,14 @@ function removeHabit(id) {
   renderHabits(habits);
 }
 
+function clearCompleted() {
+  const habits = loadHabits().filter(h => !h.done);
+  saveHabits(habits);
+  renderHabits(habits);
+}
+
 document.getElementById('add-btn').addEventListener('click', addHabit);
+document.getElementById('clear-completed-btn').addEventListener('click', clearCompleted);
 
 document.getElementById('habit-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') addHabit();
