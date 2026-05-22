@@ -1,0 +1,104 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-habit {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#habit-input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+#habit-input:focus {
+  border-color: #555;
+}
+
+#add-btn {
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background: #333;
+}
+
+#habit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.habit-item input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.habit-name {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.habit-item.done .habit-name {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  color: #e53e3e;
+}
